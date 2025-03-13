@@ -13,31 +13,32 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('wp2106741-anime-cat-wallpapers.jpg'); /* Update this to your image file name */
+  background-image: url('wp2106741-anime-cat-wallpapers.jpg'); /* Ensure this path is correct */
   background-size: cover;
   background-position: center;
   z-index: -1; /* Keeps the background behind other content */
 }
 
-/* Gray top border (like a Windows 11 taskbar) */
+/* Black top border (like a Windows 11 taskbar) */
 .top-border {
   width: 100%;
   height: 50px; /* Height of the top border */
-  background-color: #2e2e2e; /* Dark gray color for the border */
+  background-color: #111; /* Dark contrasted black color */
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1; /* Make sure it's below the glowing text */
 }
 
-/* Glowing Text for "violet" */
+/* Glowing Text for "violet" (now centered at the top) */
 .glowing-text {
   font-size: 36px;
   color: red;
   text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red;
   position: fixed;  /* Fixed position to keep it at the top */
   top: 10px; /* Adjust to place it above the top border */
-  left: 20px; /* Adjust to the left side */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
   z-index: 2; /* Make sure it's above the top border */
 }
 
@@ -48,7 +49,6 @@
   justify-content: center; /* Horizontally center the content */
   height: 100vh; /* Full viewport height */
   margin-top: 70px; /* Ensures the content starts below the taskbar */
-  position: relative;
 }
 
 /* Floating Tiles */
@@ -62,8 +62,8 @@
   background: rgba(255, 255, 255, 0.2); /* Transparent white background */
   backdrop-filter: blur(10px); /* Blurring effect */
   padding: 30px; /* Increased padding */
-  width: 300px; /* Increased width */
-  height: 350px; /* Increased height */
+  width: 350px; /* Increased width */
+  height: 400px; /* Increased height */
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   color: white;
