@@ -10,7 +10,6 @@
 html, body {
   height: 100%; /* Ensure full viewport height */
   margin: 0;
-  overflow: hidden; /* Prevent any scrolling outside the page */
 }
 
 /* Background Image */
@@ -19,7 +18,7 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 115%;
+  height: 100%;
   background-image: url('wp5697980-girls-red-animes-wallpapers.png'); /* Correct path to image */
   background-size: cover;
   background-position: center;
@@ -54,24 +53,23 @@ html, body {
   display: flex;
   align-items: center; /* Vertically center the content */
   justify-content: center; /* Horizontally center the content */
-  height: calc(100vh - 50px); /* Full viewport height minus the top border height */
-  padding-top: 60px; /* Ensures the content starts below the top border and glowing text */
+  height: 100vh; /* Full viewport height */
+  margin-top: 70px; /* Ensures the content starts below the taskbar */
 }
 
-/* Floating Tiles Container */
+/* Floating Tiles */
 .tiles {
   display: flex;
-  gap: 30px; /* Space between tiles */
+  gap: 30px;
   justify-content: center; /* Horizontally center tiles */
 }
 
-/* Tile styling */
 .tile {
   background: rgba(255, 255, 255, 0.2); /* Transparent white background */
   backdrop-filter: blur(10px); /* Blurring effect */
-  padding: 30px;
-  width: 350px; /* Wider tile */
-  height: 400px; /* Taller tile */
+  padding: 30px; /* Increased padding */
+  width: 350px; /* Increased width */
+  height: 400px; /* Increased height */
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   color: white;
@@ -79,14 +77,53 @@ html, body {
   transition: transform 0.3s;
 }
 
-/* Header inside tiles */
 .tile h2 {
   margin-bottom: 15px;
 }
 
-/* Paragraph inside tiles */
 .tile p {
   margin-bottom: 20px;
+}
+
+/* Modal Styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+  border-radius: 10px;
+  padding: 30px;
+  width: 80%;
+  max-width: 400px;
+  margin: 100px auto; /* Center the modal */
+  color: white;
+  text-align: center;
+  backdrop-filter: blur(10px); /* Blurred effect */
+}
+
+/* Close button (X) in the modal */
+.close {
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
 }
 
 /* Button Styling */
@@ -101,7 +138,6 @@ html, body {
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-/* Button hover effect */
 .button:hover {
   background-color: darkred;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
