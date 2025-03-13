@@ -22,16 +22,12 @@
 /* Gray top border (like a Windows 11 taskbar) */
 .top-border {
   width: 100%;
-  height: 50px; /* Adjust this to fit your needs */
-  background-color: #2e2e2e; /* Gray color for the border */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 20px; /* Space from the left side */
+  height: 50px; /* Height of the top border */
+  background-color: #2e2e2e; /* Dark gray color for the border */
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10; /* Makes sure it's on top of the page */
+  z-index: 1; /* Make sure it's below the glowing text */
 }
 
 /* Glowing Text for "violet" */
@@ -39,17 +35,19 @@
   font-size: 36px;
   color: red;
   text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red;
+  position: fixed;  /* Fixed position to keep it at the top */
+  top: 10px; /* Adjust to place it above the top border */
+  left: 20px; /* Adjust to the left side */
+  z-index: 2; /* Make sure it's above the top border */
 }
 
 /* Container for all elements */
 .container {
-  margin-top: 70px; /* Ensures the content starts below the taskbar */
-  width: 100%;
-  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Horizontally center the content */
+  height: 100vh; /* Full viewport height */
+  margin-top: 70px; /* Ensures the content starts below the taskbar */
   position: relative;
 }
 
@@ -57,7 +55,7 @@
 .tiles {
   display: flex;
   gap: 30px;
-  margin-top: 50px;
+  justify-content: center; /* Horizontally center tiles */
 }
 
 .tile {
