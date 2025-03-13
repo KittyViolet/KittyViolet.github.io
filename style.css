@@ -10,6 +10,7 @@
 html, body {
   height: 100%; /* Ensure full viewport height */
   margin: 0;
+  overflow: hidden; /* Prevent any scrolling outside the page */
 }
 
 /* Background Image */
@@ -52,4 +53,61 @@ html, body {
 .container {
   display: flex;
   align-items: center; /* Vertically center the content */
-  ju
+  justify-content: center; /* Horizontally center the content */
+  height: calc(100vh - 50px); /* Full viewport height minus the top border height */
+  padding-top: 60px; /* Ensures the content starts below the top border and glowing text */
+}
+
+/* Floating Tiles Container */
+.tiles {
+  display: flex;
+  gap: 30px; /* Space between tiles */
+  justify-content: center; /* Horizontally center tiles */
+}
+
+/* Tile styling */
+.tile {
+  background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+  backdrop-filter: blur(10px); /* Blurring effect */
+  padding: 30px;
+  width: 350px; /* Wider tile */
+  height: 400px; /* Taller tile */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+/* Header inside tiles */
+.tile h2 {
+  margin-bottom: 15px;
+}
+
+/* Paragraph inside tiles */
+.tile p {
+  margin-bottom: 20px;
+}
+
+/* Button Styling */
+.button {
+  display: inline-block;
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Button hover effect */
+.button:hover {
+  background-color: darkred;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+/* Hover Effect for Tiles */
+.tile:hover {
+  transform: translateY(-10px);
+}
