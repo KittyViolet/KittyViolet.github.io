@@ -79,11 +79,11 @@ html, body {
 
 /* Keyframes for the flip animation */
 @keyframes flipWords {
-  0%, 25% {
+  0%, 20% {
     opacity: 1;
     transform: translateY(0);
   }
-  20%, 50% {
+  25%, 50% {
     opacity: 0;
     transform: translateY(-100%);
   }
