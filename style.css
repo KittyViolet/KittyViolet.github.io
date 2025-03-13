@@ -51,6 +51,7 @@ html, body {
   align-items: center;
   justify-content: center;
   overflow: hidden; /* Prevents text from overflowing */
+  height: 50px; /* Keep the container size fixed */
 }
 
 /* Words that flip through */
