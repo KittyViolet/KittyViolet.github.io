@@ -23,7 +23,7 @@
       <div class="tile">
         <h2>Who I Am</h2>
         <p> <!-- Edit this text with your personal info -->
-          Hai, I'm Violet random person on a random planet soon taking classes for my cisco essentials! Passionate about creating unique ideas. 
+          Hai, I'm Violet random person on a random planet soon taking classes for my cisco essentials! Passionate about creating unique ideas.
         </p>
       </div>
       <!-- Tile 2 -->
@@ -39,9 +39,21 @@
         <p> <!-- Edit with your contact info or any links -->
           Feel free to reach out via email (prefer OpenPGP).
         </p>
-        <a href="mailto:mitigation@mailfence.com" class="button">Contact</a>
+        <a href="javascript:void(0);" class="button" id="contactButton">Contact</a>
+
+        <!-- Modal for copying contact info -->
+        <div id="contactModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Contact Info</h3>
+            <p id="contactInfo">https://magicbroccoli.de/i/#violetkitty@magicbroccoli.de</p>
+            <button id="copyButton" class="button">Copy to Clipboard</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
-</html>  
+</html>
