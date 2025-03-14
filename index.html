@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -38,23 +38,31 @@
            I'm a unix enthusiast. I know how to operate a Linux operating system at high standards, for hire package maintainer for unstable testing.
         </p>
       </div>
-      <!-- Tile 3 -->
+      <!-- Tile 3 Removed and replaced with clickable image -->
       <div class="tile">
-        <h2>Contact Me</h2>
-        <p> 
-          Feel free to reach out via xmpp.
-        </p>
-        <a href="javascript:void(0);" class="button" id="contactButton">Contact</a>
+        <h2>Click to Explore</h2>
+        <img id="exploreImage" src="your-image.png" alt="Explore" class="clickable-image">
+      </div>
+    </div>
+  </div>
 
-        <!-- Modal for copying contact info -->
-        <div id="contactModal" class="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Contact Info</h3>
-            <p id="contactInfo">https://magicbroccoli.de/i/#violetkitty@magicbroccoli.de</p>
-            <button id="copyButton" class="button">Copy to Clipboard</button>
-          </div>
-        </div>
+  <!-- Music Player Floating Bar -->
+  <div class="music-bar">
+    <audio id="audioPlayer" src="your-audio.mp3" preload="auto"></audio>
+    <div class="progress-container">
+      <input type="range" id="progressBar" value="0" max="100" step="1" class="progress-bar" />
+      <button id="playPauseButton">Play</button>
+    </div>
+  </div>
+
+  <!-- Modal for clickable image with options -->
+  <div id="blurModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-options">
+        <button class="option" id="whoAmI">Who Am I?</button>
+        <button class="option" id="whatDoIDo">What Do I Do?</button>
+        <button class="option" id="contactMe">How You Can Contact Me</button>
       </div>
     </div>
   </div>
