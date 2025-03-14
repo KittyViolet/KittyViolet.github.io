@@ -26,7 +26,7 @@ html, body {
   z-index: -1;
 }
 
-/* Black top border */
+/* Gray Top Border */
 .top-border {
   width: 100%;
   height: 50px;
@@ -37,7 +37,7 @@ html, body {
   z-index: 1;
 }
 
-/* Glowing Text for "violet" */
+/* Glowing Text for the Words That Flip */
 .glowing-text {
   font-size: 36px;
   color: red;
@@ -56,31 +56,47 @@ html, body {
   position: relative;
 }
 
+/* Words that flip through */
 .word {
   opacity: 0;
   position: absolute;
   animation: flipWords 12s infinite;
 }
 
-.word:nth-child(1) { animation-delay: 0s; }
-.word:nth-child(2) { animation-delay: 3s; }
-.word:nth-child(3) { animation-delay: 6s; }
-.word:nth-child(4) { animation-delay: 9s; }
-
-@keyframes flipWords {
-  0% { opacity: 0; }
-  5%, 25% { opacity: 1; }
-  30%, 100% { opacity: 0; }
+/* Set animation delays for each word */
+.word:nth-child(1) {
+  animation-delay: 0s;
+}
+.word:nth-child(2) {
+  animation-delay: 3s;
+}
+.word:nth-child(3) {
+  animation-delay: 6s;
+}
+.word:nth-child(4) {
+  animation-delay: 9s;
 }
 
-/* Floating Text and Button */
+/* Keyframes for the flip animation */
+@keyframes flipWords {
+  0% {
+    opacity: 0;
+  }
+  5%, 25% {
+    opacity: 1;
+  }
+  30%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Floating Left Text and Button */
 .floating-left {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 10%;
   transform: translateY(-50%);
   color: white;
-  text-align: left;
 }
 
 .floating-text h1 {
@@ -92,14 +108,14 @@ html, body {
   color: red;
 }
 
+/* "About Me" Button */
 .about-btn {
   background-color: red;
   color: white;
   padding: 15px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: none;
+  border-radius: 5px;
   margin-top: 20px;
+  border: none;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -112,12 +128,13 @@ html, body {
 .about-me-modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
 }
 
 .modal-content {
@@ -125,11 +142,10 @@ html, body {
   border-radius: 10px;
   padding: 30px;
   width: 80%;
-  max-width: 400px;
+  max-width: 600px;
   margin: 100px auto;
   color: white;
   text-align: center;
-  backdrop-filter: blur(10px);
 }
 
 .close {
@@ -148,54 +164,58 @@ html, body {
   text-decoration: none;
 }
 
-/* Music Player */
+/* Music Player Styles */
 .music-player {
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  bottom: 50px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 600px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  padding: 20px;
+  transform: translateX(-50%);
+  background-color: rgba(255, 0, 0, 0.7); /* Red background with transparency */
   border-radius: 10px;
-  color: white;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px); /* Blur effect */
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .music-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .playPauseBtn {
-  background-color: red;
+  background-color: transparent;
+  border: 2px solid white;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 15px;
   font-size: 18px;
-  border-radius: 5px;
-  border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  border-radius: 5px;
 }
 
 .playPauseBtn:hover {
-  background-color: darkred;
+  background-color: rgba(255, 0, 0, 0.5);
 }
 
 .progress-bar-container {
-  margin-left: 20px;
-  width: 60%;
+  width: 70%;
 }
 
 .progress-bar {
   width: 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
 }
 
 .current-time,
 .duration {
-  margin-left: 10px;
+  color: white;
 }
