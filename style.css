@@ -142,17 +142,15 @@ html, body {
   margin-bottom: 20px;
 }
 
-/* Image Styling for the image above the middle tile */
-.image-container {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.tile-image {
-  width: 736px;
-  height: 736px;
-  object-fit: cover;
+/* Image container above the middle tile with background image */
+.tile-image-container {
+  width: 100%;
+  height: 250px; /* Adjust height as needed */
+  background-image: url('assets/your-image.png'); /* Path to your image */
+  background-size: cover;
+  background-position: center;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 /* Modal Styling */
