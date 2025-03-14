@@ -93,16 +93,27 @@ html, body {
 /* Floating Text on the left side */
 .floating-text {
   position: absolute;
-  left: 20px;
+  left: 30px; /* Move words a bit more to the right */
   top: 200px;
   color: white;
   font-size: 24px;
   font-weight: bold;
   z-index: 2;
+  animation: float 2s ease-in-out infinite;
 }
 
 .floating-text .name {
   color: red;
+}
+
+/* Floating animation for the words */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Slight floating effect */
+  }
 }
 
 /* Red button for "About Me" */
@@ -116,6 +127,7 @@ html, body {
   font-weight: bold;
   transition: background-color 0.3s, box-shadow 0.3s;
   margin-top: 20px;
+  animation: float 2s ease-in-out infinite; /* Floating animation for the button */
 }
 
 .button:hover {
