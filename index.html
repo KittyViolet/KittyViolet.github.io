@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Violet :3</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome for Play/Pause icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <!-- Gray top border (gray border) -->
@@ -23,54 +22,39 @@
   <!-- Background Image -->
   <div class="background-image"></div>
 
-  <!-- Container for Floating Tiles -->
-  <div class="container">
-    <div class="tiles">
-      <!-- Tile 1 -->
-      <div class="tile">
-        <h2>Who Am I?</h2>
-        <p> 
-          Hai, I'm Violet random person on a random planet soon taking classes for my cisco essentials! Passionate about creating unique ideas.
-        </p>
-      </div>
-      <!-- Tile 2 -->
-      <div class="tile">
-        <h2>What Do I Do?</h2>
-        <p> 
-           I'm a unix enthusiast. I know how to operate a Linux operating system at high standards, for hire package maintainer for unstable testing.
-        </p>
-      </div>
-    </div>
+  <!-- Floating Text on the left side -->
+  <div class="floating-text">
+    <h2>Hai There, I'm <span class="name">Violet</span></h2>
+    <a href="javascript:void(0);" class="button" id="aboutButton">About Me</a>
   </div>
 
-  <!-- Image that opens blur modal (PNG image) -->
-  <div class="image-container">
-    <img src="your-image.png" alt="Explore" id="exploreImage">
-  </div>
-
-  <!-- Blur Modal -->
-  <div id="blurModal" class="modal">
+  <!-- Modal for "About Me" (blurred window) -->
+  <div id="aboutModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>Explore Options</h2>
-      <button onclick="alert('Who am I details')" class="explore-btn">Who Am I</button>
-      <button onclick="alert('What do I do details')" class="explore-btn">What Do I Do</button>
-      <button onclick="alert('How you can contact me details')" class="explore-btn">How You Can Contact Me</button>
+      <h3>About Me</h3>
+      <div class="section">
+        <h4>What Do I Do?</h4>
+        <p>I am passionate about technology, especially Linux and networking. Currently, I’m diving into Cisco essentials and more.</p>
+      </div>
+      <div class="section">
+        <h4>Who Am I?</h4>
+        <p>Hi, I'm Violet. I'm someone who loves to create and explore new ideas, especially related to technology and coding.</p>
+      </div>
+      <div class="section">
+        <h4>How To Contact?</h4>
+        <p>You can reach out to me via XMPP. Feel free to contact me anytime!</p>
+      </div>
     </div>
   </div>
 
-  <!-- Audio player section (music bar) -->
+  <!-- Audio Player Section -->
+  <audio id="audioPlayer" src="your-audio-file.mp3" preload="auto"></audio>
+
   <div class="music-bar">
-    <div class="progress-container">
-      <input type="range" id="progressBar" class="progress-bar" value="0" step="1" min="0" max="100">
-    </div>
-    <button class="play-pause-button" id="playPauseButton">
-      <i class="fas fa-play"></i> Play
-    </button>
+    <button id="playPauseButton"><i class="fas fa-play"></i></button>
+    <input id="progressBar" type="range" value="0" max="100" step="1">
   </div>
-
-  <!-- Audio Player (hidden) -->
-  <audio id="audioPlayer" src="Her's - Marcel (Official Audio).mp3" preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>
