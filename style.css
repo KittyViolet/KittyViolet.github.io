@@ -106,16 +106,6 @@ html, body {
   justify-content: center;
 }
 
-/* Floating animation for the tiles */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px); /* Moves tiles up */
-  }
-}
-
 /* Tile styles */
 .tile {
   background: rgba(255, 255, 255, 0.2);
@@ -128,9 +118,6 @@ html, body {
   color: white;
   text-align: center;
   transition: transform 0.3s;
-  
-  /* Apply the floating effect */
-  animation: float 3s ease-in-out infinite;
 }
 
 .tile h2 {
@@ -139,6 +126,31 @@ html, body {
 
 .tile p {
   margin-bottom: 20px;
+}
+
+/* Music Bar */
+.music-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 200px;
 }
 
 /* Modal Styling */
@@ -150,7 +162,8 @@ html, body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
 }
 
 .modal-content {
@@ -197,6 +210,27 @@ html, body {
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
 }
 
-.tile:hover {
-  transform: translateY(-10px);
+.clickable-image {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+}
+
+/* Modal Options */
+.modal-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-options .option {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: darkred;
 }
