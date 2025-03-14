@@ -104,6 +104,7 @@ html, body {
   display: flex;
   gap: 30px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* Floating animation for the tiles */
@@ -139,6 +140,19 @@ html, body {
 
 .tile p {
   margin-bottom: 20px;
+}
+
+/* Image Styling for the image above the middle tile */
+.image-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tile-image {
+  width: 736px;
+  height: 736px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 /* Modal Styling */
