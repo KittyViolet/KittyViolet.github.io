@@ -97,6 +97,7 @@ html, body {
   left: 10%;
   transform: translateY(-50%);
   color: white;
+  animation: floatText 3s ease-in-out infinite;
 }
 
 .floating-text h1 {
@@ -164,58 +165,12 @@ html, body {
   text-decoration: none;
 }
 
-/* Music Player Styles */
-.music-player {
-  position: fixed;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(255, 0, 0, 0.7); /* Red background with transparency */
-  border-radius: 10px;
-  padding: 20px;
-  width: 400px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px); /* Blur effect */
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.music-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.playPauseBtn {
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
-  padding: 10px 15px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.playPauseBtn:hover {
-  background-color: rgba(255, 0, 0, 0.5);
-}
-
-.progress-bar-container {
-  width: 70%;
-}
-
-.progress-bar {
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  color: white;
-  outline: none;
-}
-
-.current-time,
-.duration {
-  color: white;
+/* Floating animation */
+@keyframes floatText {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-45%) translateX(5px);
+  }
 }
