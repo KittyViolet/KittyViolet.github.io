@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Violet :3</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Gray top border (gray border) -->
+  <!-- Gray top border -->
   <div class="top-border">
-    <!-- Top text that flips through words -->
     <h1 class="glowing-text">
       <span class="word">Violet</span>
       <span class="word">is a</span>
@@ -22,17 +20,18 @@
   <!-- Background Image -->
   <div class="background-image"></div>
 
-  <!-- Floating Text on the left side -->
-  <div class="floating-text">
-    <h2>Hai There, I'm <span class="name">Violet</span></h2>
-    <a href="javascript:void(0);" class="button" id="aboutButton">About Me</a>
+  <!-- Left side of the screen - Floating words and About Me button -->
+  <div class="floating-left">
+    <div class="floating-text">
+      <h1>Hai There I'm <span class="highlighted-text">Violet</span></h1>
+    </div>
+    <button class="about-btn" id="aboutMeButton">About Me</button>
   </div>
 
-  <!-- Modal for "About Me" (blurred window) -->
-  <div id="aboutModal" class="modal">
+  <!-- About Me Modal -->
+  <div id="aboutMeModal" class="about-me-modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <h3>About Me</h3>
+      <span class="close" id="closeModal">&times;</span>
       <div class="section">
         <h4>What Do I Do?</h4>
         <p>I'm a unix enthusiast. I know how to operate a Linux operating system at high standards, for hire package maintainer for unstable testing.</p>
@@ -43,18 +42,23 @@
       </div>
       <div class="section">
         <h4>How To Contact?</h4>
-        <p>You can reach out to me via xmpp. Feel free to contact me anytime :3</p>
+        <p>Feel free to reach out via xmpp: <strong>violetkitty@magicbroccoli.de</strong></p>
       </div>
     </div>
   </div>
 
-  <!-- Audio Player Section -->
-  <audio id="audioPlayer" src="Her's - Marcel (Official Audio).mp3" preload="auto"></audio>
-
-  <!-- Music Bar (above the black bar) -->
-  <div class="music-bar">
-    <button id="playPauseButton"><i class="fas fa-play"></i></button>
-    <input id="progressBar" type="range" value="0" max="100" step="1">
+  <!-- Music Player Section (Centered) -->
+  <div class="music-player">
+    <audio id="audioPlayer" preload="auto"></audio>
+    <div class="player-container">
+      <div class="music-bar">
+        <button id="playPauseButton" class="playPauseBtn">Play</button>
+        <div class="progress-bar-container">
+          <input type="range" id="progressBar" class="progress-bar" value="0" max="100" />
+        </div>
+        <span id="currentTime" class="current-time">0:00</span> / <span id="duration" class="duration">3:09</span>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
