@@ -26,7 +26,7 @@ html, body {
   z-index: -1;
 }
 
-/* Black top border (like a Windows 11 taskbar) */
+/* Black top border (Black border) */
 .top-border {
   width: 100%;
   height: 50px;
