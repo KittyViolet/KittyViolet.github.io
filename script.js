@@ -1,49 +1,52 @@
-// Get modal and buttons for the clickable image
-const modal = document.getElementById("blurModal");
-const exploreImage = document.getElementById("exploreImage");
-const closeButton = document.getElementsByClassName("close")[0];
-
-// Open the modal when the image is clicked
-exploreImage.onclick = function() {
-  modal.style.display = "block";
-};
-
-// Close the modal when the close (X) button is clicked
-closeButton.onclick = function() {
-  modal.style.display = "none";
-};
-
-// Close the modal if the user clicks anywhere outside of the modal
-window.onclick = function(event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-};
-
-// Audio player functionality
+// Audio Player (Play/Pause functionality)
 const audioPlayer = document.getElementById("audioPlayer");
-const progressBar = document.getElementById("progressBar");
 const playPauseButton = document.getElementById("playPauseButton");
+const progressBar = document.getElementById("progressBar");
 
-// Play/Pause button logic
-playPauseButton.onclick = function() {
-  if (audioPlayer.paused) {
-    audioPlayer.play();
-    playPauseButton.innerText = "Pause";
-  } else {
-    audioPlayer.pause();
-    playPauseButton.innerText = "Play";
-  }
-};
-
-// Update the progress bar based on the audio current time
+// Update the progress bar as the audio plays
 audioPlayer.ontimeupdate = function() {
   const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
   progressBar.value = progress;
 };
 
-// Set up the event listener for progress bar interaction
+// Play/Pause functionality
+let isPlaying = false;
+
+playPauseButton.onclick = function() {
+  if (isPlaying) {
+    audioPlayer.pause();
+    playPauseButton.innerHTML = `<i class="fas fa-play"></i>`;  // Only display play icon
+  } else {
+    audioPlayer.play();
+    playPauseButton.innerHTML = `<i class="fas fa-pause"></i>`;  // Only display pause icon
+  }
+  isPlaying = !isPlaying;  // Toggle the play state
+};
+
+// Allow users to click the progress bar to change the current time of the audio
 progressBar.oninput = function() {
-  const seekTime = (progressBar.value / 100) * audioPlayer.duration;
-  audioPlayer.currentTime = seekTime;
+  const value = progressBar.value;
+  audioPlayer.currentTime = (value / 100) * audioPlayer.duration;
+};
+
+// Modal functionality for "About Me" button
+const aboutModal = document.getElementById("aboutModal");
+const aboutButton = document.getElementById("aboutButton");
+const closeButton = document.getElementsByClassName("close")[0];
+
+// Open the modal when the "About Me" button is clicked
+aboutButton.onclick = function() {
+  aboutModal.style.display = "block";
+};
+
+// Close the modal when the X is clicked
+closeButton.onclick = function() {
+  aboutModal.style.display = "none";
+};
+
+// Close the modal if the user clicks anywhere outside of the modal
+window.onclick = function(event) {
+  if (event.target === aboutModal) {
+    aboutModal.style.display = "none";
+  }
 };
