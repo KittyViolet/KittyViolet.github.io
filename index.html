@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Violet :3</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for Play/Pause icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <!-- Gray top border (gray border) -->
@@ -38,34 +40,37 @@
            I'm a unix enthusiast. I know how to operate a Linux operating system at high standards, for hire package maintainer for unstable testing.
         </p>
       </div>
-      <!-- Tile 3 Removed and replaced with clickable image -->
-      <div class="tile">
-        <h2>Click to Explore</h2>
-        <img id="exploreImage" src="your-image.png" alt="Explore" class="clickable-image">
-      </div>
     </div>
   </div>
 
-  <!-- Music Player Floating Bar -->
-  <div class="music-bar">
-    <audio id="audioPlayer" src="Her's - Marcel (Official Audio).mp3" preload="auto"></audio>
-    <div class="progress-container">
-      <input type="range" id="progressBar" value="0" max="100" step="1" class="progress-bar" />
-      <button id="playPauseButton">Play</button>
-    </div>
+  <!-- Image that opens blur modal (PNG image) -->
+  <div class="image-container">
+    <img src="your-image.png" alt="Explore" id="exploreImage">
   </div>
 
-  <!-- Modal for clickable image with options -->
+  <!-- Blur Modal -->
   <div id="blurModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <div class="modal-options">
-        <button class="option" id="whoAmI">Who Am I?</button>
-        <button class="option" id="whatDoIDo">What Do I Do?</button>
-        <button class="option" id="contactMe">How You Can Contact Me</button>
-      </div>
+      <h2>Explore Options</h2>
+      <button onclick="alert('Who am I details')" class="explore-btn">Who Am I</button>
+      <button onclick="alert('What do I do details')" class="explore-btn">What Do I Do</button>
+      <button onclick="alert('How you can contact me details')" class="explore-btn">How You Can Contact Me</button>
     </div>
   </div>
+
+  <!-- Audio player section (music bar) -->
+  <div class="music-bar">
+    <div class="progress-container">
+      <input type="range" id="progressBar" class="progress-bar" value="0" step="1" min="0" max="100">
+    </div>
+    <button class="play-pause-button" id="playPauseButton">
+      <i class="fas fa-play"></i> Play
+    </button>
+  </div>
+
+  <!-- Audio Player (hidden) -->
+  <audio id="audioPlayer" src="your-audio-file.mp3" preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>
