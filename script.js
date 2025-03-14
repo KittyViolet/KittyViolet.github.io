@@ -1,12 +1,10 @@
-// Get modal and buttons
-const modal = document.getElementById("contactModal");
-const contactButton = document.getElementById("contactButton");
+// Get modal and buttons for the clickable image
+const modal = document.getElementById("blurModal");
+const exploreImage = document.getElementById("exploreImage");
 const closeButton = document.getElementsByClassName("close")[0];
-const copyButton = document.getElementById("copyButton");
-const contactInfo = document.getElementById("contactInfo");
 
-// Open the modal when the Contact button is clicked
-contactButton.onclick = function() {
+// Open the modal when the image is clicked
+exploreImage.onclick = function() {
   modal.style.display = "block";
 };
 
@@ -22,12 +20,30 @@ window.onclick = function(event) {
   }
 };
 
-// Copy the contact info to the clipboard when the copy button is clicked
-copyButton.onclick = function() {
-  const textToCopy = contactInfo.textContent;
-  navigator.clipboard.writeText(textToCopy).then(function() {
-    alert("Contact info copied to clipboard!");
-  }, function(err) {
-    alert("Failed to copy: " + err);
-  });
+// Audio player functionality
+const audioPlayer = document.getElementById("audioPlayer");
+const progressBar = document.getElementById("progressBar");
+const playPauseButton = document.getElementById("playPauseButton");
+
+// Play/Pause button logic
+playPauseButton.onclick = function() {
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+    playPauseButton.innerText = "Pause";
+  } else {
+    audioPlayer.pause();
+    playPauseButton.innerText = "Play";
+  }
+};
+
+// Update the progress bar based on the audio current time
+audioPlayer.ontimeupdate = function() {
+  const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+  progressBar.value = progress;
+};
+
+// Set up the event listener for progress bar interaction
+progressBar.oninput = function() {
+  const seekTime = (progressBar.value / 100) * audioPlayer.duration;
+  audioPlayer.currentTime = seekTime;
 };
