@@ -10,7 +10,7 @@
 html, body {
   height: 100%;
   margin: 0;
-  overflow: hidden; /* Prevent scrollbars */
+  overflow: hidden;
 }
 
 /* Background Image */
@@ -26,7 +26,7 @@ html, body {
   z-index: -1;
 }
 
-/* Gray top border (gray border) */
+/* Gray Top Border */
 .top-border {
   width: 100%;
   height: 50px;
@@ -37,7 +37,7 @@ html, body {
   z-index: 1;
 }
 
-/* Glowing Text for "violet" (centered at the top) */
+/* Glowing Text for the Words That Flip */
 .glowing-text {
   font-size: 36px;
   color: red;
@@ -51,7 +51,7 @@ html, body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 50px; /* Ensure the height stays the same as the bar */
+  height: 50px;
   overflow: hidden;
   position: relative;
 }
@@ -90,63 +90,51 @@ html, body {
   }
 }
 
-/* Floating Text on the left side */
-.floating-text {
+/* Floating Left Text and Button */
+.floating-left {
   position: absolute;
-  left: 30px; /* Move words a bit more to the right */
-  top: 200px;
+  top: 40%;
+  left: 10%;
+  transform: translateY(-50%);
   color: white;
-  font-size: 24px;
-  font-weight: bold;
-  z-index: 2;
-  animation: float 2s ease-in-out infinite;
 }
 
-.floating-text .name {
+.floating-text h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.highlighted-text {
   color: red;
 }
 
-/* Floating animation for the words */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px); /* Slight floating effect */
-  }
-}
-
-/* Red button for "About Me" */
-.button {
-  display: inline-block;
+/* "About Me" Button */
+.about-btn {
   background-color: red;
   color: white;
-  padding: 10px 20px;
+  padding: 15px;
   border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s, box-shadow 0.3s;
   margin-top: 20px;
-  animation: float 2s ease-in-out infinite; /* Floating animation for the button */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.button:hover {
+.about-btn:hover {
   background-color: darkred;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
 }
 
-/* Modal Styling */
-.modal {
+/* About Me Modal */
+.about-me-modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
-  animation: dropDown 0.5s ease-out forwards;
 }
 
 .modal-content {
@@ -158,7 +146,6 @@ html, body {
   margin: 100px auto;
   color: white;
   text-align: center;
-  backdrop-filter: blur(10px);
 }
 
 .close {
@@ -177,48 +164,58 @@ html, body {
   text-decoration: none;
 }
 
-/* Sections inside the modal */
-.section {
-  margin-top: 20px;
-  padding: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.section h4 {
-  margin-bottom: 10px;
-}
-
-/* Audio Player (Updated) - on top of black bar */
-.music-bar {
+/* Music Player Styles */
+.music-player {
   position: fixed;
-  top: 0; /* This places it directly on top of the black bar */
-  left: 20px;
-  background-color: rgba(255, 0, 0, 0.7);
-  padding: 5px;
-  width: 250px; /* Smaller width for less bulk */
-  border-radius: 5px;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 0, 0, 0.7); /* Red background with transparency */
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px); /* Blur effect */
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 10;
 }
 
-.music-bar button {
+.music-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.playPauseBtn {
   background-color: transparent;
+  border: 2px solid white;
   color: white;
-  border: none;
-  font-size: 20px;
+  padding: 10px 15px;
+  font-size: 18px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
-.music-bar button:hover {
-  color: darkred;
+.playPauseBtn:hover {
+  background-color: rgba(255, 0, 0, 0.5);
 }
 
-.music-bar input[type="range"] {
-  width: 80%;
+.progress-bar-container {
+  width: 70%;
+}
+
+.progress-bar {
+  width: 100%;
   background-color: transparent;
   border: none;
+  color: white;
   outline: none;
+}
+
+.current-time,
+.duration {
   color: white;
 }
