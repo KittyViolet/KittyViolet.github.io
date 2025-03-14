@@ -23,15 +23,15 @@ playPauseButton.onclick = function() {
   isPlaying = !isPlaying;  // Toggle the play state
 };
 
-// Allow users to click the progress bar to change the current time of the audio
+// Allow users to click the progress bar to change audio position
 progressBar.oninput = function() {
-  const value = progressBar.value;
-  audioPlayer.currentTime = (value / 100) * audioPlayer.duration;
+  const newTime = (progressBar.value / 100) * audioPlayer.duration;
+  audioPlayer.currentTime = newTime;
 };
 
-// Modal functionality for "About Me" button
-const aboutModal = document.getElementById("aboutModal");
+// Modal (About Me)
 const aboutButton = document.getElementById("aboutButton");
+const aboutModal = document.getElementById("aboutModal");
 const closeButton = document.getElementsByClassName("close")[0];
 
 // Open the modal when the "About Me" button is clicked
@@ -39,12 +39,12 @@ aboutButton.onclick = function() {
   aboutModal.style.display = "block";
 };
 
-// Close the modal when the X is clicked
+// Close the modal when the close (X) button is clicked
 closeButton.onclick = function() {
   aboutModal.style.display = "none";
 };
 
-// Close the modal if the user clicks anywhere outside of the modal
+// Close the modal if the user clicks outside of the modal
 window.onclick = function(event) {
   if (event.target === aboutModal) {
     aboutModal.style.display = "none";
