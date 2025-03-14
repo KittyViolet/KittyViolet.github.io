@@ -98,8 +98,10 @@ html, body {
   transform: translateY(-50%);
   color: white;
   animation: floatText 3s ease-in-out infinite;
+  position: relative; /* Important for positioning the glowing orb */
 }
 
+/* Floating Text Styles */
 .floating-text h1 {
   font-size: 36px;
   font-weight: bold;
@@ -123,6 +125,38 @@ html, body {
 
 .about-btn:hover {
   background-color: darkred;
+}
+
+/* Glowing Orb */
+.glowing-orb {
+  position: absolute;
+  top: 50%; /* Center the orb vertically */
+  left: -60px; /* Position it slightly outside */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: red;
+  box-shadow: 0 0 15px 10px red; /* Glowing effect */
+  animation: orbit 5s linear infinite;
+}
+
+/* Orb animation to make it circle around the text */
+@keyframes orbit {
+  0% {
+    transform: translateX(0) translateY(-40px); /* Start from above */
+  }
+  25% {
+    transform: translateX(100px) translateY(0); /* Move right */
+  }
+  50% {
+    transform: translateX(0) translateY(40px); /* Move below */
+  }
+  75% {
+    transform: translateX(-100px) translateY(0); /* Move left */
+  }
+  100% {
+    transform: translateX(0) translateY(-40px); /* Complete the circle */
+  }
 }
 
 /* About Me Modal */
@@ -183,4 +217,3 @@ html, body {
     transform: translateY(-45%) translateX(5px);
   }
 }
-
