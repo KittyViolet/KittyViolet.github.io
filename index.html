@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Gray top border -->
+  <!-- Gray top border (gray border) -->
   <div class="top-border">
+    <!-- Top text that flips through words -->
     <h1 class="glowing-text">
       <span class="word">Violet</span>
       <span class="word">is a</span>
@@ -20,7 +21,7 @@
   <!-- Background Image -->
   <div class="background-image"></div>
 
-  <!-- Left side of the screen - Floating words and About Me button -->
+  <!-- Floating Text and About Me Button -->
   <div class="floating-left">
     <div class="floating-text">
       <h1>Hai There I'm <span class="highlighted-text">Violet</span></h1>
@@ -34,11 +35,11 @@
       <span class="close" id="closeModal">&times;</span>
       <div class="section">
         <h4>What Do I Do?</h4>
-        <p>I'm a unix enthusiast. I know how to operate a Linux operating system at high standards, for hire package maintainer for unstable testing.</p>
+        <p>I'm a unix enthusiast, package maintainer for unstable testing, etc.</p>
       </div>
       <div class="section">
         <h4>Who Am I?</h4>
-        <p>Hai, I'm Violet random person on a random planet soon taking classes for my cisco essentials! Passionate about creating unique ideas.</p>
+        <p>Hi, I'm Violet! I'm a random person exploring new tech ideas.</p>
       </div>
       <div class="section">
         <h4>How To Contact?</h4>
@@ -47,9 +48,12 @@
     </div>
   </div>
 
-  <!-- Music Player Section (Centered) -->
+  <!-- Music Player -->
   <div class="music-player">
-    <audio id="audioPlayer" preload="auto"></audio>
+    <audio id="audioPlayer" preload="auto">
+      <!-- Add the MP3 files below. Replace the source with the desired MP3 file path -->
+      <source id="audioSource" src="song1.mp3" type="audio/mp3">
+    </audio>
     <div class="player-container">
       <div class="music-bar">
         <button id="playPauseButton" class="playPauseBtn">Play</button>
