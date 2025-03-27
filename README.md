@@ -1,1 +1,1 @@
-A little project im working on using javascript,HTML,CSS :3
+A little project im working on using AI javascript,HTML,CSS :3
