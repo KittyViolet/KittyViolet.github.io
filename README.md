@@ -1,1 +1,1 @@
-A little project im working on using AI javascript,HTML,CSS :3
+A little of what AI does with css, js & html (very bad job xd)
